@@ -1,0 +1,33 @@
+#list_name=['test1','test2','test3']
+#list_score=[52,53,53]
+list_name=[]
+list_score=[]
+for _ in range(int(raw_input())):
+    name = raw_input()
+    list_name.append(name)
+    score = float(raw_input())
+    list_score.append(score)
+
+dic=dict()
+p=0
+for name in list_name:
+   # if list_name[0] in dic:
+    #    dic[list_name[0]].append(list_score[0])
+    #else:
+            # create a new array in this slot
+     
+    dic[list_name[p]] = list_score[p]
+    p+=1
+list_score.sort()
+nl=[]
+s=set(list_score)
+nl=list(sorted(s, reverse=False))
+    
+ans=[]
+for key, value in sorted(dic.items(), key=lambda item: item[1]):
+    if value==nl[1]:
+        ans.append(key)
+ans.sort()
+for i in ans:
+    print i
+
